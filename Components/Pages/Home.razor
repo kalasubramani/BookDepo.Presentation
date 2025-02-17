@@ -1,0 +1,80 @@
+﻿@page "/"
+
+@using BookDepo.ApiClient;
+@using BookDepo.ApiClient.Models.ApiModels;
+@inject BookDepoApiClientService apiClient;
+
+<div class="card">
+	<div class="card-body p-0">
+		<table class="table table-striped mb-0">
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Name</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<input @bind="addBookModel.BookCode" class="form-control" placeholder="Code"/>
+					</td>
+					<td>
+						<input @bind="addBookModel.BookName" class="form-control" placeholder="Name" />
+					</td>
+					<td>
+						<input @bind="addBookModel.Price" class="form-control" placeholder="Price"/>
+					</td>
+					<td>
+						<a @onclick="AddBook" href="javascript:void(0)">Save</a>
+					</td>
+				</tr>
+				@if(products?.Any() ?? false)
+				{
+					@foreach(var book in books)
+					{
+
+					}
+				}
+				else
+				{
+					<tr>
+						<td class="text-center" colspan="3">- No Products -</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+@code{
+	private List<Books>? books;
+	private Books addBookModel = new();
+
+	//loads the book list by call api endpoint
+	private async Task LoadBooks(){
+		books = await apiClient.GetBooks();
+	}
+
+	//add a new book by call api endpoint
+	private async Task AddBook()
+	{
+		await apiClient.SaveBook(addBookModel);
+		await LoadBooks();
+
+		//clear out values
+		addBookModel = new();
+	}
+
+	private async Task EditProduct(Books book)
+	{
+		await apiClient.UpdateBook(book);
+		await LoadBooks();
+	}
+
+	private async Task DeleteBook(int bookId)
+	{
+		await apiClient.DeleteBook(bookId);
+		await LoadBooks();
+	}
+}
