@@ -43,3 +43,4 @@ C:\Users\kalay\source\repos\BookDepo.Presentation\obj\Debug\net8.0\refint\BookDe
 C:\Users\kalay\source\repos\BookDepo.Presentation\obj\Debug\net8.0\BookDepo.Presentation.pdb
 C:\Users\kalay\source\repos\BookDepo.Presentation\obj\Debug\net8.0\BookDepo.Presentation.genruntimeconfig.cache
 C:\Users\kalay\source\repos\BookDepo.Presentation\obj\Debug\net8.0\ref\BookDepo.Presentation.dll
+C:\Users\kalay\source\repos\BookDepo.Presentation\obj\Debug\net8.0\BookDepo.Presentation.sourcelink.json

@@ -29,11 +29,14 @@
 						<a @onclick="AddBook" href="javascript:void(0)">Save</a>
 					</td>
 				</tr>
-				@if(products?.Any() ?? false)
+				@if(books?.Any() ?? false)
 				{
 					@foreach(var book in books)
 					{
-
+						@* <ProductRowItemComponent BookRowItem="Books"
+										OnEdit="editb"
+										OnDelete="DeleteBook"
+							/> *@
 					}
 				}
 				else
