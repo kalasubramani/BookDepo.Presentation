@@ -33,10 +33,10 @@
 				{
 					@foreach(var book in books)
 					{
-						@* <ProductRowItemComponent BookRowItem="Books"
-										OnEdit="editb"
-										OnDelete="DeleteBook"
-							/> *@
+						<BookRowItemComponent BookRowItem="book"
+						OnEdit="EditBook"
+						OnDelete="DeleteBook"
+						/>
 					}
 				}
 				else
@@ -54,6 +54,12 @@
 	private List<Books>? books;
 	private Books addBookModel = new();
 
+	protected override async Task OnInitializedAsync()
+	{
+		// await base.OnInitializedAsync();
+		await LoadBooks();
+	}
+
 	//loads the book list by call api endpoint
 	private async Task LoadBooks(){
 		books = await apiClient.GetBooks();
@@ -69,7 +75,7 @@
 		addBookModel = new();
 	}
 
-	private async Task EditProduct(Books book)
+	private async Task EditBook(Books book)
 	{
 		await apiClient.UpdateBook(book);
 		await LoadBooks();

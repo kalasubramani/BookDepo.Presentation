@@ -13,23 +13,23 @@
 				<a @onclick="async ()=> await OnDelete.InvokeAsync(BookRowItem.Id)" href="javascript:void(0)">Delete</a>
 			</td>
 		}
+	else{
+			<td>
+				<input @bind="BookRowItem.BookCode" class="form-control" placeholder="code"/>
+			</td>
+			<td>
+				<input @bind="BookRowItem.BookName" class="form-control" placeholder="name"/>
+			</td>
+			<td>
+				<input @bind="BookRowItem.Price" class="form-control" placeholder="price"/>
+			</td>
+			<td>
+				<a @onclick="Update" href="javascript:void(0)">Save</a>
+				<a @onclick="()=>isEditMode= false" href="javascript:void(0)">Cancel</a>
+			</td>
+		}
 	</tr>
-}else{
-	<td>
-		<input @bind="BookRowItem.BookCode" class="form-control" />
-	</td>
-	<td>
-		<input @bind="BookRowItem.BookName" class="form-control" />
-	</td>
-	<td>
-		<input @bind="BookRowItem.Price" class="form-control" />
-	</td>
-	<td>
-		<a @onclick="Update" href="javascript:void(0)">Save</a>
-		<a @onclick="()=>isEditMode= false" href="javascript:void(0)">Cancel</a>
-	</td>
-}
-
+	}
 @code{
 	[Parameter]
 	public Books? BookRowItem{ get; set; }

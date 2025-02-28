@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookDepo.Presentation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+066304e849562f4d34c7198ca0f28e673f336dd4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e12d377cd448b1af4264b6125ec0b168de333697")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookDepo.Presentation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookDepo.Presentation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
